@@ -1,0 +1,40 @@
+name: Agente de Precios Automático
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Se ejecuta todos los días a las 06:00 AM (UTC)
+  workflow_dispatch: # Te permite ejecutarlo a mano con un botón en GitHub
+
+jobs:
+  scrape_market:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # Si un bot falla, los demás siguen corriendo
+      matrix:
+        # AQUÍ ESTÁ LA MAGIA: 4 servidores en paralelo, cada uno con su grupo
+        retailer_group: 
+          - "Mercado Libre"
+          - "Fravega,Musimundo"
+          - "Coto,Jumbo,Carrefour"
+          - "Rodo,Cetrogar,Megatone,Naldo"
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar Librerías
+        run: |
+          pip install supabase python-dotenv playwright google-genai
+          playwright install chromium
+
+      - name: Ejecutar Bot Maestro
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python bot_maestro.py --retailers "${{ matrix.retailer_group }}"
