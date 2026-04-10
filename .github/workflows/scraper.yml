@@ -13,8 +13,8 @@ jobs:
       matrix:
         # AQUÍ ESTÁ LA MAGIA: 4 servidores en paralelo, cada uno con su grupo
         retailer_group: 
-           - "Mercado Libre"
-           # - "Fravega,On City"
+           - "Fravega"
+           # - "On City, Castillo"
            # - "Coto,Jumbo,Carrefour"
            # - "Rodo,Cetrogar,Megatone,Naldo"
 
