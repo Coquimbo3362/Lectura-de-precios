@@ -16,7 +16,7 @@ jobs:
            # - "Fravega"
            - "On City, Castillo"
            # - "Coto,Jumbo,Carrefour"
-           # - "Rodo,Cetrogar,Megatone,Naldo"
+           - "Rodo,Cetrogar,Megatone,Naldo"
 
     steps:
       - name: Descargar el código
