@@ -14,9 +14,9 @@ jobs:
         # AQUÍ ESTÁ LA MAGIA: 4 servidores en paralelo, cada uno con su grupo
         retailer_group: 
            # - "Fravega"
-           - "On City, Castillo"
-           # - "Coto,Jumbo,Carrefour"
-           - "Rodo,Cetrogar,Megatone,Naldo"
+           # - "On City, Castillo"
+           - "Coto,Jumbo"
+           # - "Rodo,Cetrogar,Megatone,Naldo"
 
     steps:
       - name: Descargar el código
