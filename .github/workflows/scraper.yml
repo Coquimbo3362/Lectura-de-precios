@@ -15,8 +15,10 @@ jobs:
         retailer_group: 
            # - "Fravega"
            # - "On City, Castillo"
-           - "Coto,Jumbo"
-           # - "Rodo,Cetrogar,Megatone,Naldo"
+           # - "Coto,Jumbo"
+           - "Rodo,Megatone"
+           # - "Cetrogar, Naldo"
+           # - "Mercado Libre (Tiendas Oficiales)"
 
     steps:
       - name: Descargar el código
