@@ -15,8 +15,8 @@ jobs:
         retailer_group: 
            # - "Fravega"
            # - "On City, Castillo"
-           # - "Coto,Jumbo"
-           - "Rodo,Megatone"
+           - "Coto,Jumbo"
+           # - "Rodo,Megatone"
            # - "Cetrogar, Naldo"
            # - "Mercado Libre (Tiendas Oficiales)"
 
