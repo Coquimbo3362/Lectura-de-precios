@@ -23,4 +23,4 @@ jobs:
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         # Aquí puedes poner los retailers que bloquean la nube
-        run: python bot_maestro.py --retailers "Jumbo"
+        run: python bot_maestro.py --retailers "Jumbo,Fravega,Carrefour,Coppel"
