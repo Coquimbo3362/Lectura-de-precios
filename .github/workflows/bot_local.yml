@@ -1,1 +1,24 @@
 
+    name: Bot Local (Retailers Difíciles)
+
+on:
+  schedule:
+    - cron: '0 7 * * *' # Se ejecuta a las 07:00 AM (UTC)
+  workflow_dispatch: # Botón manual
+
+jobs:
+  scrape_local:
+    # AQUÍ ESTÁ EL CAMBIO: No usa ubuntu, usa tu PC
+    runs-on: self-hosted 
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Ejecutar Bot Maestro
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        # Aquí pones los retailers que bloquean la IP de USA
+        run: python bot_maestro.py --retailers "Jumbo"
