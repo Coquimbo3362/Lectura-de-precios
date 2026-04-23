@@ -25,4 +25,4 @@ jobs:
           PYTHONIOENCODING: utf-8
           PYTHONUNBUFFERED: "1"
         # Aquí puedes poner los retailers que bloquean la nube
-        run: python bot_maestro.py --retailers "Carrefour"
+        run: python bot_maestro.py --retailers "Cetrogar,OnCity,Castillo"
