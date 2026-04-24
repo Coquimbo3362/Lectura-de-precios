@@ -18,4 +18,4 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: |
           cd C:\Users\herna\OneDrive\Escritorio\agente_precios
-          python bot_maestro.py --retailers "Fravega,Carrefour,Mercado Libre (Tiendas Oficiales)"
+          python bot_maestro.py --retailers "Casa del Audio,Naldo,On City,Castillo,Cetrogar,Coppel,Fravega,Carrefour,Mercado Libre (Tiendas Oficiales)"
