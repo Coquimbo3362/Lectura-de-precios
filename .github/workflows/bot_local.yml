@@ -25,4 +25,5 @@ jobs:
           PYTHONIOENCODING: utf-8
           PYTHONUNBUFFERED: "1"
         # Aquí puedes poner los retailers que bloquean la nube
+        shell: cmd   # <--- ¡ESTA ES LA LÍNEA MÁGICA QUE SALTA LA SEGURIDAD!
         run: python bot_maestro.py --retailers "Naldo,On City,Casa del Audio,Coppel"
