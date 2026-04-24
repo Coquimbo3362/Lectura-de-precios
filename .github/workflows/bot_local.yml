@@ -1,29 +1,21 @@
 
 name: Bot Local (Retailers Difíciles)
 
-# Esta es la sección 'on' que te daba error. 
-# Aquí definimos los "disparadores" (triggers).
 on:
   schedule:
-    - cron: '0 7 * * *'  # Se ejecuta automáticamente todos los días a las 07:00 UTC
-  workflow_dispatch:      # Este habilita el botón "Run workflow" para que lo lances a mano
+    - cron: '0 7 * * *'
+  workflow_dispatch:
 
 jobs:
   scrape_local:
-    # Le decimos que busque tu PC (el runner que configuramos antes)
     runs-on: self-hosted 
 
     steps:
-      - name: 1. Descargar el código de GitHub
-        uses: actions/checkout@v4
-
-      - name: 2. Ejecutar el Bot Maestro en mi PC
+      - name: Ejecutar Bot Maestro directamente en la PC
+        shell: cmd
         env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           PYTHONIOENCODING: utf-8
           PYTHONUNBUFFERED: "1"
-        # Aquí puedes poner los retailers que bloquean la nube
-        shell: cmd   # <--- ¡ESTA ES LA LÍNEA MÁGICA QUE SALTA LA SEGURIDAD!
-        run: C:\Users\herna\AppData\Local\Microsoft\WindowsApps\python.exe bot_maestro.py --retailers "Naldo,On City,Casa del Audio,Coppel"
+        run: |
+          cd C:\Users\herna\OneDrive\Escritorio\agente_precios
+          python bot_maestro.py --retailers "Naldo,On City,Casa del Audio,Coppel"
