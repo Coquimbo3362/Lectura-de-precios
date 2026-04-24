@@ -14,7 +14,7 @@ jobs:
         # AQUÍ ESTÁ LA MAGIA: 4 servidores en paralelo, cada uno con su grupo
         retailer_group: 
            # - "Fravega"
-           # - "On City, Castillo"
+           - "Casa del Audio"
            - "Coto,Jumbo"
            - "Rodo,Megatone"
            # - "Cetrogar, Naldo"
